@@ -8,26 +8,26 @@ main =
 
 init : Model
 init =
-  2
+  2   -- This is to initialize the value to the model
 
 type alias Model = Int
 
 type Msg = Increment | Decrement
 
-isEven x= modBy 2 x==0
+isEven x= modBy 2 x==0  -- This is to check if the value is even or not
 
-addtolist x flist =
+addtolist x flist =                     -- This is a recursive function which will give the output
       if x>1 then
           let 
-              newlist=fib x::flist
+              newlist=fib x::flist      -- This will add the content to a list
           in
-              addtolist (x-1) newlist
+              addtolist (x-1) newlist   -- This will call back the function again
       else
         --flist
         
-        List.sum (List.filter isEven flist)
+        List.sum (List.filter isEven flist)   -- This will first filter the even numbers and then take a sum of the same
 
-fib x = 
+fib x =         -- This will produce the fibonacci series
     case x of 
       0 -> 1 
       1 -> 1
@@ -52,7 +52,7 @@ view model =
 update msg model =
   case msg of
     Increment ->
-     if model>=100 then 100
+     if model>=100 then 100 -- Giving limit to the model max is 100
      else  model + 1
 
     Decrement -> 
