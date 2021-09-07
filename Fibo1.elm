@@ -44,7 +44,6 @@ view model =
         text "enter"
         , input [type_ "number", placeholder "Please enter only number", onInput Inputc ][]
         , br [][]
-        ,  text "Check if the content is int : "
         , p [] 
             [
                 text ("Sum of even Fibonacci Number in series is: "++ 
